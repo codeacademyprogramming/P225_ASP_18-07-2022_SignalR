@@ -1,0 +1,27 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<h1>Chat</h1>
+<h3>Users</h3>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <ul class="list-group">
+                @foreach (AppUser appUser in Model)
+                {
+                    <li id="@appUser.Id" class="list-group-item">@appUser.Name @appUser.SurName <span style="width:10px; height:10px;" class="rounded-circle  @(appUser.ConnectionId != null?"bg-success":"bg-secondary")"></span></li>
+                }
+            </ul>
+        </div>
+        <div class="col-lg-10">
+
+        </div>
+    </div>
+</div>
+
+@*@section Script{
+    <script src="~/assets/js/chat.js"></script>
+}*@
